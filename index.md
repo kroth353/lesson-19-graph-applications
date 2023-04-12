@@ -5,7 +5,7 @@
 Group Members:
 * Kayla Roth: kjroth@udel.edu
 * Testing part 2
-* Third member (email)
+* Testing part 3
 * Fourth member (email)
 
 Description of project
