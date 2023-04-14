@@ -30,7 +30,7 @@ import networkx as nx
 >  * Input:
 >  * Output:
 
-**Graph Problem/Algorithm**: [DFS/BFS/SSSP/APSP/MST]
+**Graph Problem/Algorithm**: SSSP
 
 
 **Setup code**:
