@@ -4,7 +4,6 @@
 
 Group Members:
 * Kayla Roth : kjroth@udel.edu
-* testing
 * Mercedes Mathews : mmathews@udel.edu
 * Sam Glover : sjglover@udel.edu
 * Yazmeen Elzamek : yelzamek@udel.edu
@@ -24,7 +23,7 @@ $> pip install networkx
 import networkx as nx
 ```
 
-# First Problem Title
+# Dijkstras Algorithm
 
 **Informal Description**: 
 
@@ -42,7 +41,7 @@ import networkx as nx
 
 **Visualization**:
 
-![Image goes here](Relative image filename goes here)
+![Dijkstra's Algortim Graph](Users/kaylaroth/lesson-19-graph-applications/graphiz.png)
 
 **Solution code:**
 
