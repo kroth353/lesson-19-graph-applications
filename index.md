@@ -41,16 +41,21 @@ import networkx as nx
 
 **Visualization**:
 
-![Dijkstra's Algorithm Graph](Users/kaylaroth/lesson-19-graph-applications/graphviz.png)
+![Dijkstra's Algorithm Graph](graphviz.png)
 
 **Solution code:**
 
 ```python
+
+import graph.json as graph
+dictionary = graph.load(open('graph.json'))
+networkxGraph = cytoscape_graph(dictionary, name = "Marvel Box Office", ident = "dijkstra")
+solution = dijkstra_path(networkxGraph, 261, 2800, "")
 ```
 
 **Output**
-
 ```
+print(solution)
 ```
 
 **Interpretation of Results**:
