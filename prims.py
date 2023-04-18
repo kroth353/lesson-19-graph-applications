@@ -1,8 +1,5 @@
-# importing networkx
 import networkx as nx
-# importing matplotlib.pyplot
 import matplotlib.pyplot as plt
-
 """
 G = nx.Graph()
 
@@ -47,8 +44,6 @@ ax = plt.gca()
 plt.axis("off")
 plt.show()
 """
-import networkx as nx
-import matplotlib.pyplot as plt
 
 G = nx.Graph() # create a new Graph
 
