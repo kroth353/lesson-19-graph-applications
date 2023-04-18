@@ -85,9 +85,31 @@ G.add_edge("Grand Central Station", "Swan House", weight=2)
 # G.add_weighted_edges_from([('CISC 108', 'CISC 181', 1)]) # add nodes & edges
 
 # draw the graph and show it MUST BE THE LAST TWO LINES
+pos = nx.spring_layout(G, seed=500)  # positions for all nodes - seed for reproducibility
+
+# nodes
+nx.draw_networkx_nodes(G, pos, node_size=50)
+
+# edges
+nx.draw_networkx_edges(G, pos, width=2)
+nx.draw_networkx_edges(
+    G, pos, width=2, alpha=0.5)
+
+# node labels
+nx.draw_networkx_labels(G, pos, font_size=6, font_family="sans-serif")
+# edge weight labels
+edge_labels = nx.get_edge_attributes(G, "weight")
+nx.draw_networkx_edge_labels(G, pos, edge_labels)
+
+ax = plt.gca()
+plt.axis("off")
+plt.show()
+
+"""
 pos = nx.circular_layout(G)
 edge_labels = nx.get_edge_attributes(G, 'weight')
 nx.draw_networkx(G, with_labels=True, font_weight="bold", font_size=6)
 nx.draw_networkx_edge_labels(G, pos, edge_labels, font_size=6)
 plt.axis("off")
 plt.show()
+"""
