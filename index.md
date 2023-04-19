@@ -62,13 +62,13 @@ print(solution)
 
 # Prim's Algorithm
 
-**Informal Description**: 
+**Informal Description**: You want to recommend some movies to a friend. You know what genre of movies your friend likes. By using your friend's preferences, you want to find the smallest set of movie genres that are connected to each other and that will fit your friend's preferences.   
 
 > **Formal Description**:
->  * Input:
->  * Output:
+>  * Input: An undirected graph, consisting of movie genres as nodes and the edges represent the similarity between the genres
+>  * Output: A Minimum Spanning Tree 
 
-**Graph Problem/Algorithm**: SSSP
+**Graph Problem/Algorithm**: MST
 
 
 **Setup code**:
