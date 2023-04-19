@@ -1,4 +1,4 @@
-# Title of Your Project
+# Graphing with Movies
 
 **CISC320 Spring 2023 Lesson 14 - Graph Applications**
 
@@ -9,7 +9,7 @@ Group Members:
 * Yazmeen Elzamek : yelzamek@udel.edu
 
 
-Description of project
+In our site, we created 4 different graphs that all revolve around the central concept of Movies. We focused on Dijkstra's Algorithm, Prim's Algorithm, Breadth-first Search, and Depth-first Search.
 
 ## Installation Code
 
