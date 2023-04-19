@@ -60,7 +60,7 @@ print(solution)
 
 **Interpretation of Results**:
 
-# Second Problem Title
+# Prim's Algorithm
 
 **Informal Description**: 
 
@@ -78,7 +78,7 @@ print(solution)
 
 **Visualization**:
 
-![Image goes here](Relative image filename goes here)
+![Prim's Algorithm Graph](prims.png)
 
 **Solution code:**
 
