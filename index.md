@@ -136,10 +136,16 @@ plt.show()
 **Solution code:**
 
 ```python
+G = nx.minimum_spanning_tree(G, weight='weight', algorithm='prim', ignore_nan=False)
+pos = nx.spring_layout(G)
+nx.draw(G, pos, with_labels=True)
+edge_labels = nx.get_edge_attributes(G, 'weight')
+nx.draw_networkx_edge_labels(G, pos, edge_labels)
+plt.show()
 ```
 
 **Output**
-
+![Prim's Algorithm Output](primsoutput.png)
 ```
 ```
 
