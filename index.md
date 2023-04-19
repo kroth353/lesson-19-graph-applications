@@ -157,17 +157,24 @@ plt.show()
 **Solution code:**
 
 ```python
-G = nx.minimum_spanning_tree(G, weight='weight', algorithm='prim', ignore_nan=False)
+# Graph
+G= nx.minimum_spanning_tree(G, weight='weight', algorithm='prim', ignore_nan=False)
 pos = nx.spring_layout(G)
 nx.draw(G, pos, with_labels=True)
 edge_labels = nx.get_edge_attributes(G, 'weight')
 nx.draw_networkx_edge_labels(G, pos, edge_labels)
 plt.show()
+
+# Edges 
+mst = tree.minimum_spanning_edges(G, algorithm="prim", data=False)
+edgelist = list(mst)
+print(sorted(sorted(e) for e in edgelist))
 ```
 
 **Output**
 ![Prim's Algorithm Output](primsoutput.png)
 ```
+[['A', 'An'], ['A', 'B'], ['A', 'D'], ['Ac', 'W'], ['An', 'T'], ['B', 'Do'], ['B', 'My'], ['C', 'M'], ['C', 'R'], ['C', 'S'], ['Cr', 'My'], ['D', 'S'], ['Do', 'H'], ['Do', 'W'], ['F', 'T'], ['F', 'Z'], ['H', 'Sp'], ['Ho', 'Z'], ['Sc', 'T']]
 ```
 
 **Interpretation of Results**:
