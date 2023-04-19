@@ -1,5 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+from networkx.algorithms import tree
 
 """
 A = Animation
@@ -83,10 +84,16 @@ plt.axis("off")
 plt.savefig("prims.png")
 """
 
-# Solution Code
+# Solution Code for MST Image
 G = nx.minimum_spanning_tree(G, weight='weight', algorithm='prim', ignore_nan=False)
 pos = nx.spring_layout(G)
 nx.draw(G, pos, with_labels=True)
 edge_labels = nx.get_edge_attributes(G, 'weight')
 nx.draw_networkx_edge_labels(G, pos, edge_labels)
-plt.savefig("primsoutput.png")
+# plt.savefig("primsoutput.png")
+
+# Edges for MST
+mst = tree.minimum_spanning_edges(G, algorithm="prim", data=False)
+edgelist = list(mst)
+print(sorted(sorted(e) for e in edgelist))
+

@@ -1,4 +1,4 @@
-# Title of Your Project
+# Graphing with Movies
 
 **CISC320 Spring 2023 Lesson 14 - Graph Applications**
 
@@ -9,7 +9,7 @@ Group Members:
 * Yazmeen Elzamek : yelzamek@udel.edu
 
 
-Description of project
+In our site, we created 4 different graphs that all revolve around the central concept of Movies. We focused on Dijkstra's Algorithm, Prim's Algorithm, Breadth-first Search, and Depth-first Search.
 
 ## Installation Code
 
@@ -62,7 +62,28 @@ print(solution)
 
 # Prim's Algorithm
 
-**Informal Description**: You want to recommend some movies to a friend. You know what genre of movies your friend likes. By using your friend's preferences, you want to find the smallest set of movie genres that are connected to each other and that will fit your friend's preferences.   
+**Informal Description**: You want to recommend some movies to a friend. You know what genre of movies your friend likes. By using your friend's preferences, you want to find the smallest set of movie genres that are connected to each other and that will fit your friend's preferences. 
+Each movie genre is given an abbreviation. The abbreviations are as follows:
+- A = Animation
+- Ac = Action 
+- An = Anime 
+- B = Biographical 
+- C = Comedy 
+- Cr = Crime 
+- D = Drama 
+- Do = Documentary 
+- F = Fantasy 
+- H = Historical 
+- Ho - Horror 
+- M = Musical 
+- My = Mystery 
+- R = Romance 
+- S = Satire
+- Sc = Sci Fi  
+- Sp = Sports
+- T = Thriller 
+- W = Western 
+- Z = Zombie 
 
 > **Formal Description**:
 >  * Input: An undirected graph, consisting of movie genres as nodes and the edges represent the similarity between the genres
@@ -136,20 +157,27 @@ plt.show()
 **Solution code:**
 
 ```python
-G = nx.minimum_spanning_tree(G, weight='weight', algorithm='prim', ignore_nan=False)
+# Graph
+G= nx.minimum_spanning_tree(G, weight='weight', algorithm='prim', ignore_nan=False)
 pos = nx.spring_layout(G)
 nx.draw(G, pos, with_labels=True)
 edge_labels = nx.get_edge_attributes(G, 'weight')
 nx.draw_networkx_edge_labels(G, pos, edge_labels)
 plt.show()
+
+# Edges 
+mst = tree.minimum_spanning_edges(G, algorithm="prim", data=False)
+edgelist = list(mst)
+print(sorted(sorted(e) for e in edgelist))
 ```
 
 **Output**
 ![Prim's Algorithm Output](primsoutput.png)
 ```
+[['A', 'An'], ['A', 'B'], ['A', 'D'], ['Ac', 'W'], ['An', 'T'], ['B', 'Do'], ['B', 'My'], ['C', 'M'], ['C', 'R'], ['C', 'S'], ['Cr', 'My'], ['D', 'S'], ['Do', 'H'], ['Do', 'W'], ['F', 'T'], ['F', 'Z'], ['H', 'Sp'], ['Ho', 'Z'], ['Sc', 'T']]
 ```
 
-**Interpretation of Results**:
+**Interpretation of Results**: Depending on what genres your friend likes, you can figure out which genres to recommend to them and which genres to not recommend. 
 
 # Third Problem Title
 
