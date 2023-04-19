@@ -62,7 +62,28 @@ print(solution)
 
 # Prim's Algorithm
 
-**Informal Description**: You want to recommend some movies to a friend. You know what genre of movies your friend likes. By using your friend's preferences, you want to find the smallest set of movie genres that are connected to each other and that will fit your friend's preferences.   
+**Informal Description**: You want to recommend some movies to a friend. You know what genre of movies your friend likes. By using your friend's preferences, you want to find the smallest set of movie genres that are connected to each other and that will fit your friend's preferences. 
+Each movie genre is given an abbreviation. The abbreviations are as follows:
+- A = Animation
+- Ac = Action 
+- An = Anime 
+- B = Biographical 
+- C = Comedy 
+- Cr = Crime 
+- D = Drama 
+- Do = Documentary 
+- F = Fantasy 
+- H = Historical 
+- Ho - Horror 
+- M = Musical 
+- My = Mystery 
+- R = Romance 
+- S = Satire
+- Sc = Sci Fi  
+- Sp = Sports
+- T = Thriller 
+- W = Western 
+- Z = Zombie 
 
 > **Formal Description**:
 >  * Input: An undirected graph, consisting of movie genres as nodes and the edges represent the similarity between the genres
