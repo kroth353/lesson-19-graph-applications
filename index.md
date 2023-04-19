@@ -177,7 +177,7 @@ print(sorted(sorted(e) for e in edgelist))
 [['A', 'An'], ['A', 'B'], ['A', 'D'], ['Ac', 'W'], ['An', 'T'], ['B', 'Do'], ['B', 'My'], ['C', 'M'], ['C', 'R'], ['C', 'S'], ['Cr', 'My'], ['D', 'S'], ['Do', 'H'], ['Do', 'W'], ['F', 'T'], ['F', 'Z'], ['H', 'Sp'], ['Ho', 'Z'], ['Sc', 'T']]
 ```
 
-**Interpretation of Results**:
+**Interpretation of Results**: Depending on what genres your friend likes, you can figure out which genres to recommend to them and which genres to not recommend. 
 
 # Third Problem Title
 
