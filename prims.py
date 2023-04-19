@@ -80,4 +80,4 @@ edge_labels = nx.get_edge_attributes(G, "weight")
 nx.draw_networkx_edge_labels(G, pos, edge_labels, font_size=8)
 
 plt.axis("off")
-plt.show()
+plt.savefig("prims.png")
