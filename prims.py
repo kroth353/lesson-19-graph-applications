@@ -1,8 +1,6 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-G = nx.Graph() # create a new Graph
-
 """
 A = Animation
 Ac = Action 
@@ -25,6 +23,7 @@ T = Thriller
 W = Western 
 Z = Zombie 
 """
+G = nx.Graph() # create a new Graph
 
 G.add_edge("R", "C", weight=2)
 G.add_edge("C", "M", weight=1)
@@ -64,6 +63,7 @@ G.add_edge("Do", "D", weight=5)
 G.add_edge("W", "Z", weight=18)
 G.add_edge("C", "Ac", weight=19)
 
+"""
 # draw the graph and show it MUST BE THE LAST TWO LINES
 pos = nx.spring_layout(G)  # positions for all nodes - seed for reproducibility
 
@@ -81,3 +81,12 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels, font_size=8)
 
 plt.axis("off")
 plt.savefig("prims.png")
+"""
+
+# Solution Code
+G = nx.minimum_spanning_tree(G, weight='weight', algorithm='prim', ignore_nan=False)
+pos = nx.spring_layout(G)
+nx.draw(G, pos, with_labels=True)
+edge_labels = nx.get_edge_attributes(G, 'weight')
+nx.draw_networkx_edge_labels(G, pos, edge_labels)
+plt.savefig("primsoutput.png")
