@@ -73,7 +73,8 @@ print(solution)
 
 **Setup code**:
 
-```G.add_edge("R", "C", weight=2)
+```python
+G.add_edge("R", "C", weight=2)
 G.add_edge("C", "M", weight=1)
 G.add_edge("Z", "Ho", weight=2)
 G.add_edge("T", "Ho", weight=5)
