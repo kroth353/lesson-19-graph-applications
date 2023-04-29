@@ -26,10 +26,10 @@ import networkx as nx
 # Dijkstras Algorithm
 
 **Informal Description**: 
-
+It is the release day for a movie you have been looking forward to for months. You need to get to the movie theater (on 17th street) from your house(on 2nd street). You usually take a longer route because it is prettier but you're running late for the movie and need to figure out the shortest path to get to the theater. 
 > **Formal Description**:
->  * Input:
->  * Output:
+>  * Input: A series of edges representing the different travel paths, whose weights represent the time it takes to travel along that particular path. The nodes represent the streets taken on that particular path.
+>  * Output: The shortest path between second street and seventeenth street 
 
 **Graph Problem/Algorithm**: SSSP
 
@@ -61,10 +61,10 @@ print(nx.dijkstra_path(G, "2nd", "17th", weight = 'weight'))
 ```
 
 **Output**
-
+```python
 ['2nd', '9th', '14th', '7th', '8th', '17th']
-
-**Interpretation of Results**:
+```
+**Interpretation of Results**: The shortest path is to travel from your house on second street and turn onto 9th street. From there you will turn onto 14th street, next onto 7th street, then onto 8th street, and finally you will turn onto 17th street to reach the movie theater.
 
 # Prim's Algorithm
 
