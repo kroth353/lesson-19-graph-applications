@@ -36,27 +36,31 @@ import networkx as nx
 
 **Setup code**:
 
-```python
-```
+Roads = ["1st 2nd {'weight': 6}", "1st 5th {'weight': 8}", "1st 13th {'weight': 3}", "1st 8th {'weight': 13}", "1st 4th {'weight': 7}",
+         "2nd 9th {'weight': 1}", "2nd 6th {'weight': 17}", "2nd 15th {'weight': 8}",
+         "3rd 18th {'weight': 18}", "3rd 12th {'weight': 3}", "3rd 20th {'weight': 23}", "3rd 5th {'weight': 4}",
+         "4th 3rd {'weight': 2}", "4th 16th {'weight': 8}", "4th 19th {'weight': 4}", "4th 10th {'weight': 14}",
+         "5th 13th {'weight': 17}", "5th 17th {'weight': 20}", "5th 15th {'weight': 10}", "5th 18th {'weight': 6}",
+         "6th 11th {'weight': 3}", "6th 19th {'weight': 5}", "6th 12th {'weight': 2}", "6th 7th {'weight': 8}",
+         "7th 14th {'weight': 2}", "7th 8th {'weight': 9}", "7th 20th {'weight': 4}",
+         "8th 12th {'weight': 8}", "8th 17th {'weight': 2}",
+         "9th 14th {'weight': 4}", "9th 6th {'weight': 11}", "9th 16th {'weight': 10}",
+         "10th 20th {'weight': 15}", "10th 11th {'weight': 3}"]
 
 **Visualization**:
 
 
 ![Dijkstra's Algorithm Graph](dijkstra.png)
 **Solution code:**
+import networkx as nx
 
-```python
+G = nx.parse_edgelist(Roads, nodetype=str)
+print(nx.dijkstra_path(G, "2nd", "17th", weight = 'weight'))
 
-import graph.json as graph
-dictionary = graph.load(open('graph.json'))
-networkxGraph = cytoscape_graph(dictionary, name = "Marvel Box Office", ident = "dijkstra")
-solution = dijkstra_path(networkxGraph, 261, 2800, "")
-```
 
 **Output**
-```
-print(solution)
-```
+
+['2nd', '9th', '14th', '7th', '8th', '17th']
 
 **Interpretation of Results**:
 
