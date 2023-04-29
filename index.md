@@ -41,7 +41,7 @@ import networkx as nx
 
 **Visualization**:
 
-![Dijkstra's Algorithm Graph](graphviz.png)
+![Dijkstra's Algorithm Graph](dijkstra.png)
 
 **Solution code:**
 
