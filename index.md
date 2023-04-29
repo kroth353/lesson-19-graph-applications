@@ -29,7 +29,7 @@ import networkx as nx
 It is the release day for a movie you have been looking forward to for months. You need to get to the movie theater (on 17th street) from your house(on 2nd street). You usually take a longer route because it is prettier but you're running late for the movie and need to figure out the shortest path to get to the theater. 
 > **Formal Description**:
 >  * Input: A series of edges representing the different travel paths, whose weights represent the time it takes to travel along that particular path. The nodes represent the streets taken on that particular path.
->  * Output: The shortest path between second street and seventeenth street 
+>  * Output: A series of nodes representing the shortest path between second street and seventeenth street 
 
 **Graph Problem/Algorithm**: SSSP
 
