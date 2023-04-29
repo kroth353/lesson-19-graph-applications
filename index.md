@@ -35,7 +35,7 @@ import networkx as nx
 
 
 **Setup code**:
-
+```python
 Roads = ["1st 2nd {'weight': 6}", "1st 5th {'weight': 8}", "1st 13th {'weight': 3}", "1st 8th {'weight': 13}", "1st 4th {'weight': 7}",
          "2nd 9th {'weight': 1}", "2nd 6th {'weight': 17}", "2nd 15th {'weight': 8}",
          "3rd 18th {'weight': 18}", "3rd 12th {'weight': 3}", "3rd 20th {'weight': 23}", "3rd 5th {'weight': 4}",
@@ -47,16 +47,18 @@ Roads = ["1st 2nd {'weight': 6}", "1st 5th {'weight': 8}", "1st 13th {'weight': 
          "9th 14th {'weight': 4}", "9th 6th {'weight': 11}", "9th 16th {'weight': 10}",
          "10th 20th {'weight': 15}", "10th 11th {'weight': 3}"]
 
+```
 **Visualization**:
 
 
 ![Dijkstra's Algorithm Graph](dijkstra.png)
 **Solution code:**
+```python
 import networkx as nx
 
 G = nx.parse_edgelist(Roads, nodetype=str)
 print(nx.dijkstra_path(G, "2nd", "17th", weight = 'weight'))
-
+```
 
 **Output**
 
