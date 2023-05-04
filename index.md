@@ -185,37 +185,155 @@ print(sorted(sorted(e) for e in edgelist))
 
 **Interpretation of Results**: Depending on what genres your friend likes, you can figure out which genres to recommend to them and which genres to not recommend. 
 
-# Third Problem Title
+# Depth-First Search
 
-**Informal Description**:
+**Informal Description**: The Marvel franchise is a big one. Fans love coming out to watch the next big movie Marvel comes out with. Some of the most popular characters from the older movies make celebrity appearances in the newer movies! 
 
 > **Formal Description**:
->  * Input:
->  * Output:
+>  * Input: An undirected, unweighed graph with nodes representing the movies and edges connecting movies based on shared characters. 
+>  * Output: A spanning tree of all the nodes in the graph that are reachable from an arbitrary root
 
-**Graph Problem/Algorithm**: SSSP
+**Graph Problem/Algorithm**: Spanning Tree
 
 
 **Setup code**:
 
-```python
+```
+import networkx as nx
+import matplotlib.pyplot as plt
+
+#DFS: find a path connecting movies with the same actors
+movies = nx.Graph()
+movies.add_node("Captain America:\nThe First Avenger")
+movies.add_node("Captain Marvel")
+movies.add_node("Iron Man 1")
+movies.add_node("The Incredible Hulk")
+movies.add_node("Iron Man 2")
+movies.add_node("Thor")
+movies.add_node("The Avengers")
+movies.add_node("Iron Man 3")
+movies.add_node("Thor:\nThe Dark World")
+movies.add_node("Captain America:\nThe Winter Soldier")
+movies.add_node("Guardians of\nthe Galaxy vol. 1")
+movies.add_node("Guardians of\nthe Galaxy vol. 2")
+movies.add_node("Avengers:\nAge of Ultron")
+movies.add_node("Ant Man")
+movies.add_node("Captain America:\nCivil War")
+movies.add_node("Doctor Strange")
+movies.add_node("Thor:\nRagnarok")
+movies.add_node("Spiderman:\nHomecoming")
+movies.add_node("Black Panther")
+movies.add_node("Ant Man\nand the Wasp") #20
+movies.add_node("Avengers:\nInfinity War")
+movies.add_node("Avengers:\nEnd Game")
+movies.add_node("Spiderman:\nFar From Home")
+
+movies.add_edge("Iron Man 1", "Iron Man 2")
+movies.add_edge("Iron Man 2", "Iron Man 3")
+movies.add_edge("Iron Man 1", "Iron Man 3")
+
+movies.add_edge("Captain America:\nThe First Avenger", "Captain America:\nThe Winter Soldier")
+movies.add_edge("Captain America:\nThe Winter Soldier", "Captain America:\nCivil War")
+movies.add_edge("Captain America:\nThe First Avenger", "Captain America:\nCivil War")
+
+movies.add_edge("The Avengers", "Avengers:\nAge of Ultron")
+movies.add_edge("The Avengers", "Avengers:\nInfinity War")
+movies.add_edge("The Avengers", "Avengers:\nEnd Game")
+movies.add_edge("Avengers:\nInfinity War", "Avengers:\nAge of Ultron")
+movies.add_edge("Avengers:\nInfinity War", "Avengers:\nEnd Game")
+movies.add_edge("Avengers:\nAge of Ultron", "Avengers:\nEnd Game")
+
+movies.add_edge("Thor", "Thor:\nRagnarok")
+movies.add_edge("Thor:\nRagnarok", "Thor:\nThe Dark World")
+movies.add_edge("Thor", "Thor:\nThe Dark World")
+
+movies.add_edge("Guardians of\nthe Galaxy vol. 1", "Guardians of\nthe Galaxy vol. 2")
+
+movies.add_edge("Ant Man", "Ant Man\nand the Wasp")
+
+movies.add_edge("Spiderman:\nHomecoming", "Spiderman:\nFar From Home")
+
+movies.add_edge("The Incredible Hulk", "Doctor Strange")
+movies.add_edge("Captain Marvel", "Black Panther")
+movies.add_edge("Doctor Strange", "Black Panther")
+
+movies.add_edge("Spiderman:\nHomecoming", "Captain America:\nCivil War")
+movies.add_edge("Spiderman:\nHomecoming", "Captain America:\nThe First Avenger")
+movies.add_edge("Spiderman:\nHomecoming", "Captain America:\nThe Winter Soldier")
+
+movies.add_edge("Iron Man 1", "Captain America:\nCivil War")
+movies.add_edge("Iron Man 2", "Captain America:\nCivil War")
+movies.add_edge("Iron Man 3", "Captain America:\nCivil War")
+
+movies.add_edge("Iron Man 3", "The Incredible Hulk")
+
+movies.add_edge("Captain America:\nCivil War", "Thor:\nThe Dark World")
+movies.add_edge("Captain America:\nThe First Avenger", "Thor:\nThe Dark World")
+movies.add_edge("Captain America:\nThe Winter Soldier", "Thor:\nThe Dark World")
+
+movies.add_edge("Iron Man 1", "Avengers:\nEnd Game")
+movies.add_edge("Iron Man 2", "Avengers:\nEnd Game")
+movies.add_edge("Iron Man 3", "Avengers:\nEnd Game")
+
+movies.add_edge("Captain America:\nCivil War", "Avengers:\nEnd Game")
+movies.add_edge("Captain America:\nThe First Avenger", "Avengers:\nEnd Game")
+movies.add_edge("Captain America:\nThe Winter Soldier", "Avengers:\nEnd Game")
+
+movies.add_edge("Thor", "Avengers:\nEnd Game")
+movies.add_edge("Thor:\nRagnarok", "Avengers:\nEnd Game")
+movies.add_edge("Avengers:\nEnd Game", "Thor:\nThe Dark World")
+
+movies.add_edge("Avengers:\nEnd Game", "The Incredible Hulk")
+
+#movies.add_edge("Avengers:\nEnd Game", "Spiderman:\n")
+movies.add_edge("Avengers:\nEnd Game", "The Incredible Hulk")
+
+movies.add_edge("Avengers:\nEnd Game", "Ant Man")
+movies.add_edge("Avengers:\nEnd Game", "The Incredible Hulk")
+movies.add_edge("Avengers:\nEnd Game", "Ant Man\nand the Wasp")
+
+movies.add_edge("Avengers:\nEnd Game", "Guardians of\nthe Galaxy vol. 2")
+movies.add_edge("Avengers:\nInfinity War", "Guardians of\nthe Galaxy vol. 1")
+movies.add_edge("Avengers:\nEnd Game", "Guardians of\nthe Galaxy vol. 1")
+movies.add_edge("Avengers:\nInfinity War", "Guardians of\nthe Galaxy vol. 2")
+
+movies.add_edge("Spiderman:\nFar From Home", "Doctor Strange")
+
+movies.add_edge("The Avengers", "Iron Man 1")
+movies.add_edge("The Avengers", "Iron Man 2")
+movies.add_edge("The Avengers", "Iron Man 3")
+movies.add_edge("The Avengers", "Thor")
+movies.add_edge("The Avengers", "Captain America:\nCivil War")
+movies.add_edge("The Avengers", "Captain America:\nThe First Avenger")
+movies.add_edge("The Avengers", "Captain America:\nThe Winter Soldier")
 ```
 
 **Visualization**:
 
-![Image goes here](Relative image filename goes here)
+![DFS Graph](dfs_og.png)
 
 **Solution code:**
 
-```python
+```
+#Traversing graph starting with "The Avengers" as the root and going 2 levels deep
+movies = nx.dfs_tree(movies, source="The Avengers", depth_limit=2)
+
+#Printing list of edges/ connections between movies
+print(list(movies.edges()))
+
+#Displays resulting spanning tree after traversal
+nx.draw(movies, pos=nx.spring_layout(movies), with_labels = True, font_size = 8, node_size = 450, node_color = "orange")
+plt.show()
 ```
 
 **Output**
-
+![DFS Graph Output](dfs_after.png)
 ```
+[('The Avengers', 'Avengers:\nAge of Ultron'), ('The Avengers', 'Iron Man 1'), ('The Avengers', 'Thor'), ('The Avengers', 'Captain America:\nThe First Avenger'), ('Avengers:\nAge of Ultron', 'Avengers:\nInfinity War'), ('Avengers:\nAge of Ultron', 'Avengers:\nEnd Game'), ('Iron Man 1', 'Iron Man 2'), ('Iron Man 1', 'Iron Man 3'), ('Iron Man 1', 'Captain America:\nCivil War'), ('Thor', 'Thor:\nRagnarok'), ('Thor', 'Thor:\nThe Dark World'), ('Captain America:\nThe First Avenger', 'Captain America:\nThe Winter Soldier'), ('Captain America:\nThe First Avenger', 
+'Spiderman:\nHomecoming')]
 ```
 
-**Interpretation of Results**:
+**Interpretation of Results**: If someone is a real fan of The Avenger movie and would like to watch other movies that have characters those characters in them, this output graph would show them the movies with most characters that are in both movies. 
 
 # Fourth Problem Title
 
