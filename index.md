@@ -193,7 +193,7 @@ print(sorted(sorted(e) for e in edgelist))
 >  * Input: An undirected, unweighed graph with nodes representing the movies and edges connecting movies based on shared characters. 
 >  * Output: A spanning tree of all the nodes in the graph that are reachable from an arbitrary root
 
-**Graph Problem/Algorithm**: Spanning Tree
+**Graph Problem/Algorithm**: DFS
 
 
 **Setup code**:
@@ -285,7 +285,6 @@ movies.add_edge("Avengers:\nEnd Game", "Thor:\nThe Dark World")
 
 movies.add_edge("Avengers:\nEnd Game", "The Incredible Hulk")
 
-#movies.add_edge("Avengers:\nEnd Game", "Spiderman:\n")
 movies.add_edge("Avengers:\nEnd Game", "The Incredible Hulk")
 
 movies.add_edge("Avengers:\nEnd Game", "Ant Man")
