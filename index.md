@@ -309,7 +309,7 @@ movies.add_edge("The Avengers", "Captain America:\nThe Winter Soldier")
 
 **Visualization**:
 
-![DFS Graph](dfs_og.png)
+![DFS Graph](dfs_og.PNG)
 
 **Solution code:**
 
@@ -326,7 +326,7 @@ plt.show()
 ```
 
 **Output**
-![DFS Graph Output](dfs_after.png)
+![DFS Graph Output](dfs_after.PNG)
 ```
 [('The Avengers', 'Avengers:\nAge of Ultron'), ('The Avengers', 'Iron Man 1'), ('The Avengers', 'Thor'), ('The Avengers', 'Captain America:\nThe First Avenger'), ('Avengers:\nAge of Ultron', 'Avengers:\nInfinity War'), ('Avengers:\nAge of Ultron', 'Avengers:\nEnd Game'), ('Iron Man 1', 'Iron Man 2'), ('Iron Man 1', 'Iron Man 3'), ('Iron Man 1', 'Captain America:\nCivil War'), ('Thor', 'Thor:\nRagnarok'), ('Thor', 'Thor:\nThe Dark World'), ('Captain America:\nThe First Avenger', 'Captain America:\nThe Winter Soldier'), ('Captain America:\nThe First Avenger', 
 'Spiderman:\nHomecoming')]
