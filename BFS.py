@@ -1,1 +1,93 @@
 import networkx as nx
+import matplotlib.pyplot as plt
+
+
+graph = nx.Graph()
+
+# size of figure
+plt.figure(figsize=(9,9))
+
+# data for graph
+graph.add_edge('CP', 'JA')
+graph.add_edge('CP', 'JB')
+graph.add_edge('CP', 'RR')
+graph.add_edge('CP', 'MR')
+graph.add_edge('CP', 'OW')
+graph.add_edge('CP', 'VV')
+graph.add_edge('CP', 'IF')
+graph.add_edge('CP', 'JS')
+graph.add_edge('CP', 'ER')
+graph.add_edge('CP', 'MRK')
+graph.add_edge('CP', 'AH')
+graph.add_edge('CP', 'RW')
+graph.add_edge('JA', 'JB')
+graph.add_edge('JA', 'AS')
+graph.add_edge('JA', 'SJ')
+graph.add_edge('JA', 'OW')
+graph.add_edge('JA', 'VV')
+graph.add_edge('JA', 'IF')
+graph.add_edge('JA', 'JS')
+graph.add_edge('JA', 'ER')
+graph.add_edge('JA', 'MRK')
+graph.add_edge('JB', 'RR')
+graph.add_edge('JB', 'OW')
+graph.add_edge('JB', 'VV')
+graph.add_edge('JB', 'JS')
+graph.add_edge('JB', 'NP')
+graph.add_edge('AS', 'VV')
+graph.add_edge('AS', 'RW')
+graph.add_edge('SJ', 'MR')
+graph.add_edge('SJ', 'JR')
+graph.add_edge('SJ', 'NP')
+graph.add_edge('SJ', 'MRK')
+graph.add_edge('SJ', 'AH')
+graph.add_edge('SJ', 'RW')
+graph.add_edge('RR', 'OW')
+graph.add_edge('RR', 'IF')
+graph.add_edge('RR', 'MRK')
+graph.add_edge('RR', 'DF')
+graph.add_edge('MR', 'IF')
+graph.add_edge('MR', 'JL')
+graph.add_edge('MR', 'LD')
+graph.add_edge('MR', 'AH')
+graph.add_edge('OW', 'VV')
+graph.add_edge('OW', 'IF')
+graph.add_edge('OW', 'JS')
+graph.add_edge('OW', 'NP')
+graph.add_edge('OW', 'RW')
+graph.add_edge('VV', 'IF')
+graph.add_edge('VV', 'NP')
+graph.add_edge('VV', 'DF')
+graph.add_edge('VV', 'RW')
+graph.add_edge('IF', 'JR')
+graph.add_edge('IF', 'MRK')
+graph.add_edge('IF', 'LD')
+graph.add_edge('IF', 'DF')
+graph.add_edge('JS', 'ER')
+graph.add_edge('JS', 'AH')
+graph.add_edge('ER', 'DF')
+graph.add_edge('ER', 'AH')
+graph.add_edge('JL', 'JR')
+graph.add_edge('JL', 'MRK')
+graph.add_edge('JL', 'LD')
+graph.add_edge('JR', 'NP')
+graph.add_edge('JR', 'MRK')
+graph.add_edge('NP', 'MRK')
+graph.add_edge('MRK', 'LD')
+graph.add_edge('MRK', 'DF')
+graph.add_edge('MRK', 'AH')
+graph.add_edge('MRK', 'RW')
+
+
+position = nx.spring_layout(graph)
+
+# nodes
+nx.drawNodes(graph, position, node_size=400)
+
+# edges
+nx.drawEdges(graph, position, width=1)
+
+# node labels
+nx.drawNodeLabels(graph, position, font_size=10, font_family="sans-serif", font_weight="bold", font_color="white")
+
+plt.show()
