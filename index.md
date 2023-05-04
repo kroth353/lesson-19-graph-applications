@@ -6,7 +6,7 @@ Group Members:
 * Kayla Roth : kjroth@udel.edu
 * Mercedes Mathews : mmathews@udel.edu
 * Sam Glover : sjglover@udel.edu
-* Yazmeen Elzamek : yelzamek@udel.edu
+* Yasmeen Elzamek : yelzamek@udel.edu
 
 
 In our site, we created 4 different graphs that all revolve around the central concept of Movies. We focused on Dijkstra's Algorithm, Prim's Algorithm, Breadth-first Search, and Depth-first Search.
@@ -187,7 +187,7 @@ print(sorted(sorted(e) for e in edgelist))
 
 # Third Problem Title
 
-**Informal Description**: 
+**Informal Description**:
 
 > **Formal Description**:
 >  * Input:
