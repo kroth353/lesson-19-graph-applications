@@ -4,7 +4,7 @@
 
 Group Members:
 * Kayla Roth: kjroth@udel.edu
-* Yasmeen Elzamek: yelzamek@udel.edu
+* Second member (email)
 * Third member (email)
 * Fourth member (email)
 
