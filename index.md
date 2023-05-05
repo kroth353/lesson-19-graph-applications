@@ -1,6 +1,6 @@
 # Graphing with Movies
 
-**CISC320 Spring 2023 Lesson 14 - Graph Applications**
+**CISC320 Spring 2023 Lesson 19 - Graph Applications**
 
 Group Members:
 * Kayla Roth : kjroth@udel.edu
@@ -21,6 +21,7 @@ $> pip install networkx
 
 ```python
 import networkx as nx
+import matplotlib.pyplot as plt
 ```
 
 # Dijkstras Algorithm
@@ -198,8 +199,7 @@ print(sorted(sorted(e) for e in edgelist))
 
 **Setup code**:
 
-```
-import networkx as nx
+```python
 import matplotlib.pyplot as plt
 
 #DFS: find a path connecting movies with the same actors
@@ -313,7 +313,7 @@ movies.add_edge("The Avengers", "Captain America:\nThe Winter Soldier")
 
 **Solution code:**
 
-```
+```python
 #Traversing graph starting with "The Avengers" as the root and going 2 levels deep
 movies = nx.dfs_tree(movies, source="The Avengers", depth_limit=2)
 
@@ -334,7 +334,7 @@ plt.show()
 
 **Interpretation of Results**: If someone is a real fan of The Avenger movie and would like to watch other movies that have characters those characters in them, this output graph would show them the movies with most characters that are in both movies. 
 
-# Breadth First Search
+# Breadth-First Search
 
 **Informal Description**: You really like playing the game six degrees of Kevin Bacon but want to play with your favorite actors. By using your favorite actors, you want to find the smallest path and degree that connects two specific actors. Actors are connected if they have been in a movie together and that is considered one degree.
 Each actor is given an abbreviation. The abbreviations are as follows:
