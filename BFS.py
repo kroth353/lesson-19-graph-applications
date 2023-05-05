@@ -72,12 +72,16 @@ plt.show()
 
 
 # Graph
-start_node = 'AS'
-end_node = 'JL'
+#start_node = 'AS'
+#end_node = 'JL'
+
+start_node = input("Enter the first actors abbreviation: ")
+end_node = input("Enter the second actors abbreviation: ")
+
 path = []
 
-bfs_tree = nx.bfs_tree(graph, start_node)
-path_nodes = nx.shortest_path(bfs_tree, source=start_node, target=end_node)
+bfs_tree = nx.bfs_tree(graph, start_node.upper())
+path_nodes = nx.shortest_path(bfs_tree, source=start_node.upper(), target=end_node.upper())
 
 path = []
 for i in range(0, len(path_nodes) - 1):
